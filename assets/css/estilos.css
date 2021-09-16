@@ -1,0 +1,98 @@
+/*
+colors{
+    #353535
+}
+*/
+body{
+    margin:0; 
+    font-family: sans-serif;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden; 
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container_principal{
+    display: block; 
+    margin:0;
+    color:black;
+    font-size: 1.3em;
+    text-align: left;
+    padding: .5em;
+    margin: 10px;
+
+}
+
+.navigator{
+    background: rgb(42, 46, 51);
+    color:white;
+
+}
+
+.navigator > div{
+    display: inline-block;
+}
+
+#logo{
+    float: left;
+}
+h1{
+    color:rgb(3, 152, 158);
+}
+.btn_registroDeUsuarios{
+    padding: .2em;
+    border-radius: 5px;
+    background: rgb(3, 152, 158);
+    color:white;
+    font-size: 1.2em;;
+    cursor: pointer;
+}
+.abutton{
+    float: right;
+}
+.container_principal > div{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: justify;
+}
+
+/*Piepagina*/
+.pieagina{
+    background-color: rgb(20, 20, 20);
+}
+
+.pieagina div{
+    display: inline-block;
+    color:white;
+    text-align: left;
+    padding-left: 10px;
+    vertical-align: top;
+}
+
+@-webkit-keyframes square {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-700px) rotate(600deg); }
+  }
+@keyframes square {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-700px) rotate(600deg); }
+}
+
+/*media queries*/
+@media(max-width:600px){
+    body{
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    .navigator{
+        padding: 1em 0;
+    }
+    .container_principal > div{
+        flex-direction: column;
+    }
+
+}
