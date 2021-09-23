@@ -28,8 +28,8 @@
     <form id="registrar_usuario_form">
         <p> Nombre: <input type="text" id="nombre_usuario"></p>
         <p> Año de nacimiento: <input type="number" id="anoNacimiento_usuario"  min="1900" max="2021"></p>
-        <p> Contraseña: <input type="password" id="contrasena_usuario"></p>
-        <button id="enviar_registro"> Enviar</button>
+        <p> Contraseña: <input type="password" id="contrasena_usuario" name="password"></p>
+        <button id="enviar_registro" onclick="validar_contrasena(password.value);"> Enviar</button>
 
     </form>
     
@@ -55,6 +55,8 @@
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript" src="assets/js/validaciones.js"></script>
 
 </body>
 
