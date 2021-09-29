@@ -184,7 +184,7 @@ En caso de cumplir las condiciones retorna verdadero,
 de lo contrario retorna falso.*/
 
 function validar_anoNacimiento_usuario(valor) {
-    
+
     let valorin = valor.toString();
     //validar si es un número
 
@@ -223,7 +223,7 @@ function validar_anoNacimiento_usuario(valor) {
 
     //Condicionales
     /*Aqui retornamos el false o true que pide el ejercicio*/
-    if (isOnRange == true && isPositivo == true == isNumhere ==true) {
+    if (isOnRange == true && isPositivo == true == isNumhere == true) {
         //console.log("Estado interno: " + true);
         return true;
     } else {
@@ -233,9 +233,38 @@ function validar_anoNacimiento_usuario(valor) {
     }
 }
 
+let registros = [];
+registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
+registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" });
+registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
+registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
+
+function EncontrarUsuarioPorEdad(arreglo) {
+    console.log(arreglo);
+
+    let dateActual = new Date();
+    let mayor = dateActual.getFullYear();
+    console.log(mayor);
+    for (let i = 0; i < arreglo.length; i++) {
+        console.log(arreglo[i].anoNacimiento);
+        let fechanac = parseInt(arreglo[i].anoNacimiento);
+        if (fechanac <= mayor) {
+            mayor = fechanac;
+            regmayor = arreglo[i];
+        }
+    }
+    console.log(regmayor);
+    return regmayor;
+}
+
+EncontrarUsuarioPorEdad(registros);
+
 //validar_anoNacimiento_usuario(-2000);
 
 //Descomentar esto ultimo al subirlo
 //module.exports.validar_anoNacimiento_usuario = validar_anoNacimiento_usuario;
 //module.exports.validar_contrasena = validar_contrasena;
 //module.exports.validar_nombre_usuario = validar_nombre_usuario;
+module.exports.registros = registros;
+module.exports.EncontrarUsuarioPorEdad = EncontrarUsuarioPorEdad;
+module.exports.agregarRegistro = agregarRegistro;
