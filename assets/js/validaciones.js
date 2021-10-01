@@ -17,10 +17,10 @@ de lo contrario retorna falso.*/
 
 function validar_contrasena(string) {
 
-    console.log(string);
+    //console.log(string);
     //validar numero de caracteres
     let numcaracteres = string.length;
-    console.log(numcaracteres);
+    //console.log(numcaracteres);
 
 
 
@@ -95,17 +95,17 @@ function validar_contrasena(string) {
     /*Aqui retornamos el false o true que pide el ejercicio*/
     if (numcaracteres >= 6) {
         if (isAlfanumeric == true && isNumhere == true && isMayusHere == true && isMinusHere == true) {
-            console.log("Estado interno: " + true);
+            //console.log("Estado interno: " + true);
             //alert("Excelente");
             return true;
         } else {
-            console.log("Estado interno: " + false);
+            //console.log("Estado interno: " + false);
             //alert("Error");
 
             return false;
         }
     } else {
-        console.log("Estado interno: " + false);
+        //console.log("Estado interno: " + false);
         //alert("Error");
 
         return false;
@@ -159,10 +159,10 @@ function validar_nombre_usuario(string) {
     //Condicionales
     /*Aqui retornamos el false o true que pide el ejercicio*/
     if (isFirstMayus == true && istexto == true) {
-        console.log("Estado interno: " + true);
+        //console.log("Estado interno: " + true);
         return true;
     } else {
-        console.log("Estado interno: " + false);
+        //console.log("Estado interno: " + false);
         //alert("Error");
         return false;
     }
@@ -226,10 +226,10 @@ function validar_anoNacimiento_usuario(valor) {
     //Condicionales
     /*Aqui retornamos el false o true que pide el ejercicio*/
     if (isOnRange == true && isPositivo == true == isNumhere == true) {
-        console.log("Estado interno: " + true);
+        //console.log("Estado interno: " + true);
         return true;
     } else {
-        console.log("Estado interno: " + false);
+        //console.log("Estado interno: " + false);
         //alert("Error");
         return false;
     }
@@ -240,10 +240,10 @@ function validar_anoNacimiento_usuario(valor) {
 //#Lógica Sprint 3
 
 let registros = [];
-registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
-registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" });
-registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
-registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
+//registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
+//registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" });
+//registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
+//registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
 
 
 //Función agregar registros
@@ -252,13 +252,13 @@ function agregarRegistro() {
     var anoguard = (document.getElementById('anoNacimiento_usuario')).value;
     var passwguard = (document.getElementById('contrasena_usuario')).value;
 
-    let usuario = {
+    let nuevoRegistro = {
         usuario: nameguard,
         anoNacimiento: anoguard,
         contrasena: passwguard
     }
-    registros.push(usuario);
-    //console.log(registros);
+    registros.push(nuevoRegistro);
+    console.log(registros);
     //alert("agregado");
     //EncontrarUsuarioPorEdad(registros);
 }
