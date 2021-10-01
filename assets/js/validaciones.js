@@ -1,4 +1,6 @@
 //Archivo js
+
+//#Lógica Sprint 2
 //REQUERIMIENTO 3
 /*
 El formulario cuenta con un <input> cuyo id es
@@ -15,10 +17,10 @@ de lo contrario retorna falso.*/
 
 function validar_contrasena(string) {
 
-    //console.log(string);
+    console.log(string);
     //validar numero de caracteres
     let numcaracteres = string.length;
-    //console.log(numcaracteres);
+    console.log(numcaracteres);
 
 
 
@@ -93,17 +95,17 @@ function validar_contrasena(string) {
     /*Aqui retornamos el false o true que pide el ejercicio*/
     if (numcaracteres >= 6) {
         if (isAlfanumeric == true && isNumhere == true && isMayusHere == true && isMinusHere == true) {
-            //console.log("Estado interno: " + true);
+            console.log("Estado interno: " + true);
             //alert("Excelente");
             return true;
         } else {
-            //console.log("Estado interno: " + false);
+            console.log("Estado interno: " + false);
             //alert("Error");
 
             return false;
         }
     } else {
-        //console.log("Estado interno: " + false);
+        console.log("Estado interno: " + false);
         //alert("Error");
 
         return false;
@@ -157,10 +159,10 @@ function validar_nombre_usuario(string) {
     //Condicionales
     /*Aqui retornamos el false o true que pide el ejercicio*/
     if (isFirstMayus == true && istexto == true) {
-        //console.log("Estado interno: " + true);
+        console.log("Estado interno: " + true);
         return true;
     } else {
-        //console.log("Estado interno: " + false);
+        console.log("Estado interno: " + false);
         //alert("Error");
         return false;
     }
@@ -224,14 +226,18 @@ function validar_anoNacimiento_usuario(valor) {
     //Condicionales
     /*Aqui retornamos el false o true que pide el ejercicio*/
     if (isOnRange == true && isPositivo == true == isNumhere == true) {
-        //console.log("Estado interno: " + true);
+        console.log("Estado interno: " + true);
         return true;
     } else {
-        //console.log("Estado interno: " + false);
+        console.log("Estado interno: " + false);
         //alert("Error");
         return false;
     }
 }
+//validar_anoNacimiento_usuario(-2000);
+
+
+//#Lógica Sprint 3
 
 let registros = [];
 registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
@@ -239,6 +245,27 @@ registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" 
 registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
 registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
 
+
+//Función agregar registros
+function agregarRegistro() {
+    var nameguard = (document.getElementById('nombre_usuario')).value;
+    var anoguard = (document.getElementById('anoNacimiento_usuario')).value;
+    var passwguard = (document.getElementById('contrasena_usuario')).value;
+
+    let usuario = {
+        usuario: nameguard,
+        anoNacimiento: anoguard,
+        contrasena: passwguard
+    }
+    registros.push(usuario);
+    //console.log(registros);
+    //alert("agregado");
+    //EncontrarUsuarioPorEdad(registros);
+}
+
+
+
+//Función encontrar usuario por edad
 function EncontrarUsuarioPorEdad(arreglo) {
     console.log(arreglo);
 
@@ -253,18 +280,45 @@ function EncontrarUsuarioPorEdad(arreglo) {
             regmayor = arreglo[i];
         }
     }
-    console.log(regmayor);
+    //console.log(regmayor);
     return regmayor;
 }
 
-EncontrarUsuarioPorEdad(registros);
+//EncontrarUsuarioPorEdad(registros);
 
-//validar_anoNacimiento_usuario(-2000);
+
 
 //Descomentar esto ultimo al subirlo
 //module.exports.validar_anoNacimiento_usuario = validar_anoNacimiento_usuario;
 //module.exports.validar_contrasena = validar_contrasena;
 //module.exports.validar_nombre_usuario = validar_nombre_usuario;
+
 module.exports.registros = registros;
 module.exports.EncontrarUsuarioPorEdad = EncontrarUsuarioPorEdad;
 module.exports.agregarRegistro = agregarRegistro;
+
+
+//Función para probar
+/*
+function enviar(usernmae, anonac, pass) {
+    console.log(usernmae, anonac, pass);
+
+    //llamamos todas las funciones de validación
+
+    let user = validar_nombre_usuario(usernmae);
+    let anon = validar_anoNacimiento_usuario(anonac);
+    let contra = validar_contrasena(pass);
+    console.log("ejecutado");
+    console.log(user, anon, contra);
+    //validamos que todas las validacioens sean exitosas
+    if (user == true && anon == true && contra == true) {
+        //Llamamos función agregar registro
+        agregarRegistro();
+        console.log("ready");
+    } else {
+        alert("Error, ingresa los datos correctamente");
+    }
+};
+*/
+
+//enviar("Sebasti", 1990, "Sebas1234");
