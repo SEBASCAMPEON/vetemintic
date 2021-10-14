@@ -26,13 +26,15 @@
     </header>
 
     <form id="registrar_usuario_form">
-        <p> Nombre: <input type="text" id="nombre_usuario" name="username" placeholder="username"></p>
-        <p> Año de nacimiento: <input type="number" id="anoNacimiento_usuario" name="anonac"  min="1900" max="2021" placeholder="Año nacimiento"></p>
-        <p> Contraseña: <input type="password" id="contrasena_usuario" name="password" placeholder="password"></p>
-        <input type="button" value="enviar" id="enviar_registro" onclick="enviar(username.value, anonac.value, password.value);"> Enviar</input>
+        <h2>Login</h2>
+        <p> Username: <input type="text" id="login_nombre_usuario" name="username" placeholder="user"></p>
+        <p> Contraseña: <input type="password" id="login_contrasena" name="password" placeholder="password"></p>
+        <p> Captcha: <input type="number" id="login_captcha" name="captcha" placeholder="captcha"></p>
+        <input type="button" value="enviar" id="iniciar sesión"
+            onclick="iniciar_sesion(username.value, password.value, captcha.value);"> Enviar</input>
 
     </form>
-    
+
     <footer class="pieagina">
         <div>
             <h3>Siguenos</h3>
@@ -57,6 +59,7 @@
     </footer>
 
     <script type="text/javascript" src="assets/js/validaciones.js"></script>
+    <script type="text/javascript" src="assets/js/login.js"></script>
 
 </body>
 

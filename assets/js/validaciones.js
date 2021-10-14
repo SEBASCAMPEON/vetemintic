@@ -238,12 +238,12 @@ function validar_anoNacimiento_usuario(valor) {
 
 
 //#Lógica Sprint 3
-
+//registros usados para sprint 5 también
 let registros = [];
-//registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
-//registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" });
-//registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
-//registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
+registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
+registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" });
+registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
+registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
 
 
 //Función agregar registros
@@ -287,18 +287,16 @@ function EncontrarUsuarioPorEdad(arreglo) {
 //EncontrarUsuarioPorEdad(registros);
 
 
-
 //Descomentar esto ultimo al subirlo
 //module.exports.validar_anoNacimiento_usuario = validar_anoNacimiento_usuario;
 //module.exports.validar_contrasena = validar_contrasena;
 //module.exports.validar_nombre_usuario = validar_nombre_usuario;
+//module.exports.registros = registros;
+//module.exports.EncontrarUsuarioPorEdad = EncontrarUsuarioPorEdad;
+//module.exports.agregarRegistro = agregarRegistro;
 
-module.exports.registros = registros;
-module.exports.EncontrarUsuarioPorEdad = EncontrarUsuarioPorEdad;
-module.exports.agregarRegistro = agregarRegistro;
 
-
-//Función para probar
+//Función para probar esta es necesaria para que funcione con el formulario
 /*
 function enviar(usernmae, anonac, pass) {
     console.log(usernmae, anonac, pass);
