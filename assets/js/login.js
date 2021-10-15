@@ -1,7 +1,12 @@
 //#SPRINT 5
 //Función agregar registros
 //Esto ya está en registro solo debe agregarse en este punto por requerimiento del sprint
+/*
 let registros = [];
+registros.push({ usuario: "Sebastian", anoNacimiento: "1991", contrasena: "123456789" });
+registros.push({ usuario: "Sindy", anoNacimiento: "1993", contrasena: "2254448" });
+registros.push({ usuario: "Natalia", anoNacimiento: "1995", contrasena: "78441100" });
+registros.push({ usuario: "Carlos", anoNacimiento: "1991", contrasena: "87894556" });
 
 function agregarRegistro() {
     var nameguard = (document.getElementById('nombre_usuario')).value;
@@ -18,7 +23,7 @@ function agregarRegistro() {
     //alert("agregado");
     //EncontrarUsuarioPorEdad(registros);
 }
-
+*/
 
 
 //login y recpactha
@@ -40,16 +45,24 @@ function iniciar_sesion(usuario, contrasena, rcaptcha) {
         if (usr == usuario) {
             if (pss == contrasena) {
                 if (captcha == true) {
+                    alert("Sesión iniciada");
+                    console.log("Sesión iniciada");
                     return true;
                     break;
                 } else {
+                    console.log("Captcha inválido");
+                    alert("Inicio de sesión fallido Captcha inválido");
                     return false;
                 }
-
             } else {
+                console.log("contraseña no encontrado");
+                alert("Inicio de sesión fallido contraseña no encontrado");
                 return false;
             }
         } else {
+            console.log("usuario no encontrado");
+            alert("Inicio de sesión fallido usuario no encontrado");
+            console.log("Inicio de sesión fallido");
             return false;
         }
     }
@@ -60,24 +73,21 @@ function validar_captcha(rcaptcha) {
     let usercaptacha = parseInt(rcaptcha);
     //console.log(valorcapactha);
     if (usercaptacha === valorcapactha) {
-        //alert("Sesión iniciada");
-        //console.log("Sesión iniciada");
-
         return true;
-    } else {
-        //alert("Inicio de sesión fallido");
-        //console.log("Inicio de sesión fallido");
-        return false;
     }
+    return false;
 }
-//iniciar_sesion("Sebastian", 1234567, 4);
-//iniciar_sesion("Sebastian", 123456789, 4);
-//iniciar_sesion("Sebastian", 123456789, 16);
-
+/*
+iniciar_sesion("Sebastian", 1234567, 4);
+iniciar_sesion("Sebast", 1234567, 4);
+iniciar_sesion("Sebastian", 123456789, 4);
+iniciar_sesion("Sebastian", 123456789, 16);
+*/
 //validar_captcha(16);
 //Fin sprint 5
-
+/*
 module.exports.registros = registros;
 module.exports.iniciar_sesion = iniciar_sesion;
 module.exports.validar_captcha = validar_captcha;
 module.exports.agregarRegistro = agregarRegistro;
+*/
