@@ -1,8 +1,8 @@
 //#SPRINT 5
 //Función agregar registros
 //Esto ya está en registro solo debe agregarse en este punto por requerimiento del sprint
-//let registros = [];
-/*
+let registros = [];
+
 function agregarRegistro() {
     var nameguard = (document.getElementById('nombre_usuario')).value;
     var anoguard = (document.getElementById('anoNacimiento_usuario')).value;
@@ -18,7 +18,7 @@ function agregarRegistro() {
     //alert("agregado");
     //EncontrarUsuarioPorEdad(registros);
 }
-*/
+
 
 
 //login y recpactha
@@ -27,6 +27,7 @@ function iniciar_sesion(usuario, contrasena, rcaptcha) {
 
     let usr;
     let pss;
+    let captcha = validar_captcha(rcaptcha);
 
     for (var i = 0; i < registros.length; i++) {
         usr = registros[i].usuario;
@@ -35,11 +36,16 @@ function iniciar_sesion(usuario, contrasena, rcaptcha) {
         pss = registros[i].contrasena;
         //console.log(contrasena);
         //console.log(pss);
+
         if (usr == usuario) {
             if (pss == contrasena) {
-                validar_captcha(rcaptcha);
-                return true;
-                break;
+                if (captcha == true) {
+                    return true;
+                    break;
+                } else {
+                    return false;
+                }
+
             } else {
                 return false;
             }
@@ -53,14 +59,14 @@ function validar_captcha(rcaptcha) {
     let valorcapactha = Math.pow(2, 4);
     let usercaptacha = parseInt(rcaptcha);
     //console.log(valorcapactha);
-    if(usercaptacha === valorcapactha){
-        alert("Sesión iniciada");
-        console.log("Sesión iniciada");
+    if (usercaptacha === valorcapactha) {
+        //alert("Sesión iniciada");
+        //console.log("Sesión iniciada");
 
         return true;
-    }else{
-        alert("Inicio de sesión fallido");
-        console.log("Inicio de sesión fallido");
+    } else {
+        //alert("Inicio de sesión fallido");
+        //console.log("Inicio de sesión fallido");
         return false;
     }
 }
@@ -70,9 +76,8 @@ function validar_captcha(rcaptcha) {
 
 //validar_captcha(16);
 //Fin sprint 5
-/*
+
 module.exports.registros = registros;
 module.exports.iniciar_sesion = iniciar_sesion;
 module.exports.validar_captcha = validar_captcha;
 module.exports.agregarRegistro = agregarRegistro;
-*/
